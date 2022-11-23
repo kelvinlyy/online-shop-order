@@ -1,0 +1,22 @@
+version: "3.8"
+name: online-shop-order
+services:
+#  spring-server:
+#    build: .
+#    env_file:
+#      - .env
+#    container_name: order-service
+#    restart: on-failure
+#    ports:
+#      - ${ORDER_SERVICE_PORT}:8080
+
+  postgres-db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    container_name: shop-db
+    ports:
+      - ${DB_PORT}:5432

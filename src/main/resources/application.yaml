@@ -1,4 +1,7 @@
+server.port: 8081
+
 spring:
+  application.name: order-service
   output.ansi.enabled: ALWAYS
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:shop}
